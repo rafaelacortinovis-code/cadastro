@@ -1,66 +1,63 @@
 'use client';
-
 import { useState } from "react";
+import Card from "./components/card";
 
-export default function Informacao() {
-  const jogos = [
-    {
-      name: "MARVEL'S SPIDER-MAN REMASTERED",
-      company: "Insomniac Games"
-    },
-    {
-      name: "Ratchet & Clank: Rift Apart",
-      company: "Insomniac Games"
-    },
-    {
-      name: "Resistance: Fall of Man",
-      company: "Insomniac Games"
-    },
-    {
-      name: "EA FC 25",
-      company: "Electronic Arts"
-    },
-    {
-      name: "Apex Legends",
-      company: "Electronic Arts"
-    },
-    {
-      name: "The Sims 4",
-      company: "Electronic Arts"
-    }
-  ];
+export default function Home() {
+    var alunos = [
+        { nome: "Júlia", turma: "idev4" },
+        { nome: "Rafa", turma: "idev4" },
+        { nome: "Isa", turma: "idev4" },
+        { nome: "Zanga", turma: "idev3" },
+        { nome: "Boas", turma: "idev3" },
+        { nome: "Marques", turma: "idev3" },
+        { nome: "Elias", turma: "idev5" },
+        { nome: "Cardoso", turma: "idev5" },
+        { nome: "Daniel", turma: "idev5" },
 
-  const [typeButton, setTypeButton] = useState('1');
+    ]
+    const [nomeTurma, setNomeTurma] = useState('');
 
-  return (
-    <>
-      <h1>bem vindo ao jogo.</h1>
-      <button onClick={() => setTypeButton('1')}>Insomniac Games</button>
-      <button onClick={() => setTypeButton('2')}>Electronic Arts</button>
+    return (
+        <>
+            <h1>Bem Vindo a página de alunos</h1>
+            <button onClick={() => setNomeTurma('1')}>idev4</button>
+            <button onClick={() => setNomeTurma('2')}>idev3</button>
+            <button onClick={() => setNomeTurma('3')}>idev5</button>
 
-      {typeButton === "1" && (
-        <ol>
-          {jogos.map((jogo, index) => (
-            jogo.company === "Insomniac Games" && (
-              <div className="card" key={index}>
-                <p>{jogo.name}</p>
-              </div>
-            )
-          ))}
-        </ol>
-      )}
+            {nomeTurma === "1" && (
+                <>
+                    {alunos.map((aluno, index) => 
+                        aluno.turma === 'idev4' && 
+                           <Card nome={aluno.nome} turma={aluno.turma}>
 
-      {typeButton === "2" && (
-        <ol>
-          {jogos.map((jogo, index) => (
-            jogo.company === "Electronic Arts" && (
-              <div className="card" key={index}>
-                <p>{jogo.name}</p>
-              </div>
-            )
-          ))}
-        </ol>
-      )}
-    </>
-  );
+                           </Card> 
+                    )}
+                </>
+            )}
+
+              {nomeTurma === "2" && (
+                <>
+                    {alunos.map((aluno, index) => 
+                        aluno.turma === 'idev3' && 
+                           <Card nome={aluno.nome} turma={aluno.turma}>
+
+                           </Card> 
+                    )}
+                </>
+            )}
+
+              {nomeTurma === "3" && (
+                <>
+                    {alunos.map((aluno, index) => 
+                        aluno.turma === 'idev5' && 
+                           <Card nome={aluno.nome} turma={aluno.turma}>
+
+                           </Card> 
+                    )}
+                </>
+            )}
+
+        </>
+    )
+
 }
