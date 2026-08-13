@@ -13,5 +13,21 @@ export default function Escolas(){
         
         />
         </>
+
+       // pessoas =[
+          //  {nome='joao', idade=20, altura=1.80},
+          //  {nome='maria', idade=25, altura=1.65},
+          //  {nome='pedro', idade=30, altura=1.75},
+           
+      //  ]
+
+      //produtos=[ {empresa='jacto', produto='lixadeira', preço=150},
+      //{empresa='jacto', produto='parafusadeira', preço=110}
+      //]
+
+     // locais =[{local='academia', decrição='top',utilizacao='treino'}
+     //{local='ginasio', decrição='completo',utilizacao='volei'}
+    //]
+
     )
 }
